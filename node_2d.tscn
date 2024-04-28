@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b54caf5nrwikm"]
 
 [ext_resource type="Script" path="res://Floor.gd" id="1_laxst"]
-[ext_resource type="Script" path="res://PlayerTwo.gd" id="1_okc82"]
-[ext_resource type="Script" path="res://PlayerOne.gd" id="2_d4r6m"]
+[ext_resource type="Script" path="res://Player_1.gd" id="1_okc82"]
+[ext_resource type="Script" path="res://Player_2.gd" id="2_d4r6m"]
 [ext_resource type="Texture2D" uid="uid://cj8exyxfc03de" path="res://icon.svg" id="3_ig4ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7hs3"]
@@ -12,19 +12,19 @@ size = Vector2(750.5, 60)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player2" type="CharacterBody2D" parent="."]
+[node name="Player1" type="CharacterBody2D" parent="."]
 position = Vector2(800, 0)
 script = ExtResource("1_okc82")
-speed = 150
+speed = 110
 jump_height = 300
 speed_limit = 300
-horizontal_air_coeffecient = 0.6
+friction = 0.4
 
-[node name="Sprite2D" type="Sprite2D" parent="Player2"]
+[node name="Sprite2D" type="Sprite2D" parent="Player1"]
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("3_ig4ha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_s7hs3")
 
@@ -38,19 +38,19 @@ polygon = PackedVector2Array(-375.75, -31, -375.75, 31, 375.25, 31, 375.25, -33)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_067yg")
 
-[node name="Player1" type="CharacterBody2D" parent="."]
+[node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(400, 0)
 script = ExtResource("2_d4r6m")
-speed = 150
+speed = 110
 jump_height = 300
 speed_limit = 300
-horizontal_air_coeffecient = 0.6
+friction = 0.4
 
-[node name="Sprite2D" type="Sprite2D" parent="Player1"]
+[node name="Sprite2D" type="Sprite2D" parent="Player2"]
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("3_ig4ha")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_s7hs3")
