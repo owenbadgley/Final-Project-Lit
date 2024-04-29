@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbuir35e8b3j6"]
+
+[ext_resource type="Script" path="res://Floor.gd" id="1_ynibo"]
+[ext_resource type="PackedScene" uid="uid://d2dfxbqgrmjqm" path="res://player_1.tscn" id="2_ygkqs"]
+[ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://player_2.tscn" id="3_bnxqb"]
+[ext_resource type="PackedScene" uid="uid://k0uwbjtc84y6" path="res://rope.tscn" id="4_w0k2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_067yg"]
+size = Vector2(750.5, 60)
+
+[node name="practice_scene" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-93.0]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(500, 600)
+collision_layer = 7
+script = ExtResource("1_ynibo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor"]
+polygon = PackedVector2Array(-375.75, -31, -375.75, 31, 375.25, 31, 375.25, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_067yg")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(406.19, 134.955)
+rotation = -0.598648
+collision_layer = 7
+script = ExtResource("1_ynibo")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor2"]
+polygon = PackedVector2Array(-375.75, -31, -375.75, 31, 375.25, 31, 375.25, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+shape = SubResource("RectangleShape2D_067yg")
+
+[node name="Player2" parent="." instance=ExtResource("3_bnxqb")]
+position = Vector2(755, 282)
+
+[node name="Player1" parent="." instance=ExtResource("2_ygkqs")]
+collision_mask = 1
+
+[node name="Hook" parent="Player1" instance=ExtResource("4_w0k2s")]
