@@ -86,7 +86,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.get_collider().name == "Player2":
 			emit_signal("level_cleared")
-		if collision.get_collider().name == "DeathFloor":
+		if collision.get_collider().name == "DeathFloor" or collision.get_collider().name == "Spikes":
 			emit_signal("death")
 			
 	

@@ -47,3 +47,8 @@ position = Vector2(314, -114)
 position = Vector2(270, 259)
 
 [node name="DeathFloor" parent="." instance=ExtResource("7_vfb4o")]
+
+[node name="Spikes" type="TileMap" parent="."]
+tile_set = ExtResource("4_75lj3")
+format = 2
+layer_0/tile_data = PackedInt32Array(458742, 1310720, 3)

@@ -12,7 +12,7 @@ collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_j5bwi")
 speed = 110
-jump_height = 300
+jump_height = 450
 speed_limit = 300
 friction = 0.9
 
