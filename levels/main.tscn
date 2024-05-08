@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54caf5nrwikm"]
+
+[ext_resource type="Script" path="res://levels/Level.gd" id="1_vscpn"]
+[ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="2_06im3"]
+[ext_resource type="PackedScene" uid="uid://d2dfxbqgrmjqm" path="res://characters/player_1.tscn" id="3_ma2cw"]
+[ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://characters/player_2.tscn" id="4_42dbd"]
+
+[node name="Main" type="Node"]
+
+[node name="Main" type="CanvasLayer" parent="."]
+script = ExtResource("1_vscpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Main"]
+position = Vector2(1484, -918)
+texture = ExtResource("2_06im3")
+
+[node name="Player1" parent="Main" instance=ExtResource("3_ma2cw")]
+
+[node name="Player2" parent="Main" instance=ExtResource("4_42dbd")]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1w18a34nqtm"]
+
+[ext_resource type="PackedScene" uid="uid://d2dfxbqgrmjqm" path="res://characters/player_1.tscn" id="1_aidnp"]
+[ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://characters/player_2.tscn" id="2_17s8v"]
+[ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="3_wgyfv"]
+[ext_resource type="TileSet" uid="uid://vcvbj2vjcocf" path="res://assets/chalk_tiles.tres" id="4_75lj3"]
+
+[sub_resource type="GDScript" id="GDScript_psv7m"]
+script/source = "extends CanvasLayer
+@export var level_name = \"level\"
+
+signal level_changed(level_name)
+
+func level_cleard():
+	emit_signal(\"level_changed\", level_name)
+"
+
+[node name="Level_1" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = SubResource("GDScript_psv7m")
+level_name = "Level_1"
+
+[node name="Player1" parent="." instance=ExtResource("1_aidnp")]
+position = Vector2(-781, 375)
+
+[node name="Player2" parent="." instance=ExtResource("2_17s8v")]
+position = Vector2(677, 382)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(256, -411)
+texture = ExtResource("3_wgyfv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_75lj3")
+format = 2
+layer_0/tile_data = PackedInt32Array(524272, 196608, 2, 524273, 196608, 2, 524274, 262144, 2, 524275, 327680, 2, 524276, 393216, 2, 524277, 458752, 2, 524278, 524288, 2, 524279, 589824, 2, 589808, 131072, 3, 589809, 196608, 3, 589810, 262144, 3, 589811, 327680, 3, 589812, 393216, 3, 589813, 458752, 3, 589814, 524288, 3, 589815, 589824, 3, -393217, 131072, 2, -458752, 589824, 2, -393216, 589824, 3, -327680, 589824, 4, -262144, 589824, 5, -196608, 589824, 6, -131072, 589824, 7, -65536, 589824, 8, 0, 589824, 3, 65536, 589824, 4, 131072, 589824, 5, 196608, 589824, 6, 262144, 589824, 7, 327680, 589824, 3, 393216, 589824, 4, 458752, 589824, 5, 524288, 589824, 6, 589824, 589824, 7, 655360, 589824, 8, -327681, 131072, 3, -262145, 131072, 4, -196609, 131072, 5, -131073, 131072, 6, -65537, 131072, 7, -1, 131072, 8, 65535, 131072, 3, 131071, 131072, 4, 196607, 131072, 5, 262143, 131072, 6, 327679, 131072, 7, 393215, 131072, 8, 458751, 131072, 3, 524287, 131072, 4, 589823, 131072, 5, 655359, 131072, 6, 720895, 131072, 7, 786431, 131072, 8, 458760, 131072, 2, 524296, 131072, 3, 458761, 196608, 2, 524297, 196608, 3, 458762, 262144, 2, 524298, 262144, 3, 458763, 327680, 2, 524299, 327680, 3, 458764, 393216, 2, 524300, 393216, 3, 458765, 458752, 2, 524301, 458752, 3, 458766, 524288, 2, 524302, 524288, 3, 458767, 262144, 2, 524303, 262144, 3, 131064, 131072, 2, 131065, 589824, 2, 196601, 589824, 9, 196600, 131072, 9, -262157, 589824, 2, -262158, 524288, 2, -262159, 524288, 2, -262160, 524288, 2, -262161, 524288, 2, -196625, 327680, 9, -196624, 393216, 9, -196623, 458752, 9, -196622, 524288, 9, -196621, 589824, 9, -524291, 589824, 9, -524292, 131072, 9)

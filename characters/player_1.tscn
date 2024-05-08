@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2dfxbqgrmjqm"]
+
+[ext_resource type="Script" path="res://characters/Player_1.gd" id="1_6f8dv"]
+[ext_resource type="Texture2D" uid="uid://ccanfsvyfcfu" path="res://assets/Homeostasis_Sprites (1).png" id="2_c20cw"]
+[ext_resource type="PackedScene" uid="uid://k0uwbjtc84y6" path="res://characters/rope.tscn" id="3_cx0nj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uw451"]
+radius = 6.66666
+height = 19.3333
+
+[node name="Player1" type="CharacterBody2D"]
+position = Vector2(800, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_6f8dv")
+speed = 110
+jump_height = 300
+speed_limit = 300
+friction = 0.9
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c20cw")
+region_enabled = true
+region_rect = Rect2(580.376, 32.3999, 52.6233, 68.97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CapsuleShape2D_uw451")
+
+[node name="Hook" parent="." instance=ExtResource("3_cx0nj")]
