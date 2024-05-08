@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk0sup2kocu57"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i5tjx"]
+
+[node name="DeathFloor" type="Node2D"]
+position = Vector2(0, 700)
+
+[node name="DeathFloor" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathFloor"]
+shape = SubResource("WorldBoundaryShape2D_i5tjx")

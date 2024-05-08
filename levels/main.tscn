@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnk1nrwgeixt0"]
+[gd_scene load_steps=9 format=3 uid="uid://cnk1nrwgeixt0"]
 
 [ext_resource type="Script" path="res://levels/Level.gd" id="1_wdvv4"]
 [ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="2_410jd"]
@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://characters/player_2.tscn" id="4_en3ei"]
 [ext_resource type="TileSet" uid="uid://vcvbj2vjcocf" path="res://assets/chalk_tiles.tres" id="5_ji46j"]
 [ext_resource type="Texture2D" uid="uid://b2gcglhfllay7" path="res://assets/welcome_message.png" id="6_xngwc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fim31"]
+normal = Vector2(1, 0)
+distance = -2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1fr23"]
+normal = Vector2(-1, 0)
+distance = -1919.0
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_wdvv4")
@@ -29,3 +37,18 @@ layer_0/tile_data = PackedInt32Array(983041, 196608, 2, 983042, 262144, 2, 98304
 [node name="WelcomeMessage" type="Sprite2D" parent="."]
 position = Vector2(1114, 547)
 texture = ExtResource("6_xngwc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1096)
+shape = SubResource("WorldBoundaryShape2D_fim31")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_1fr23")

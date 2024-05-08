@@ -9,6 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 @export var blink_distance = 2500
 @export var speed_limit_vert = speed_limit
 var blinking = -100
+signal level_cleared()
+signal death()
 
 func _get_input():
 	if is_on_floor():
@@ -69,6 +71,13 @@ func _physics_process(delta):
 		_apply_gravity()
 	
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "Player1":
+			emit_signal("level_cleared")
+		if collision.get_collider().name == "DeathFloor":
+			print("p")
+			emit_signal("death")
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():

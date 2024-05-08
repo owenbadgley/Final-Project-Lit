@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 var chain_velocity = Vector2(0,0)
 
 signal level_cleared()
+signal death()
 
 
 
@@ -84,8 +85,9 @@ func _physics_process(delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().name == "Player2":
-			print("collided")
 			emit_signal("level_cleared")
+		if collision.get_collider().name == "DeathFloor":
+			emit_signal("death")
 			
 	
 	

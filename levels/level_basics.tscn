@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyeuo46kwaqpp"]
+
+[ext_resource type="PackedScene" uid="uid://bk0sup2kocu57" path="res://levels/death_floor.tscn" id="1_au270"]
+[ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="2_qewjs"]
+
+[node name="LevelBasics" type="Node2D"]
+
+[node name="DeathFloor" parent="." instance=ExtResource("1_au270")]
+
+[node name="Chalkboard-background" type="Sprite2D" parent="."]
+position = Vector2(-10, -1457)
+texture = ExtResource("2_qewjs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
