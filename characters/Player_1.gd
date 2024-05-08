@@ -9,6 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 @export var grapple_strength = 60
 var chain_velocity = Vector2(0,0)
 
+signal level_cleared()
+
 
 
 func _get_input():
@@ -79,6 +81,12 @@ func _physics_process(delta):
 	_apply_gravity()
 	_hook_pull()
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "Player2":
+			print("collided")
+			emit_signal("level_cleared")
+			
 	
 	
 # Called when the node enters the scene tree for the first time.

@@ -1,19 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://b54caf5nrwikm"]
+[gd_scene load_steps=7 format=3 uid="uid://cnk1nrwgeixt0"]
 
-[ext_resource type="Script" path="res://levels/Level.gd" id="1_vscpn"]
-[ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="2_06im3"]
-[ext_resource type="PackedScene" uid="uid://d2dfxbqgrmjqm" path="res://characters/player_1.tscn" id="3_ma2cw"]
-[ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://characters/player_2.tscn" id="4_42dbd"]
+[ext_resource type="Script" path="res://levels/Level.gd" id="1_wdvv4"]
+[ext_resource type="Texture2D" uid="uid://o7nvc6mvohtr" path="res://assets/Chalkboard-Background.jpg" id="2_410jd"]
+[ext_resource type="PackedScene" uid="uid://d2dfxbqgrmjqm" path="res://characters/player_1.tscn" id="3_v5wkg"]
+[ext_resource type="PackedScene" uid="uid://1lvhlygq0p3e" path="res://characters/player_2.tscn" id="4_en3ei"]
+[ext_resource type="TileSet" uid="uid://vcvbj2vjcocf" path="res://assets/chalk_tiles.tres" id="5_ji46j"]
+[ext_resource type="Texture2D" uid="uid://b2gcglhfllay7" path="res://assets/welcome_message.png" id="6_xngwc"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_wdvv4")
+level_name = "main"
 
-[node name="Main" type="CanvasLayer" parent="."]
-script = ExtResource("1_vscpn")
-
-[node name="Sprite2D" type="Sprite2D" parent="Main"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1484, -918)
-texture = ExtResource("2_06im3")
+texture = ExtResource("2_410jd")
 
-[node name="Player1" parent="Main" instance=ExtResource("3_ma2cw")]
+[node name="Player1" parent="." instance=ExtResource("3_v5wkg")]
+position = Vector2(110, 859)
 
-[node name="Player2" parent="Main" instance=ExtResource("4_42dbd")]
+[node name="Player2" parent="." instance=ExtResource("4_en3ei")]
+position = Vector2(1817, 864)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_ji46j")
+format = 2
+layer_0/tile_data = PackedInt32Array(983041, 196608, 2, 983042, 262144, 2, 983043, 327680, 2, 983044, 393216, 2, 983045, 458752, 2, 983046, 524288, 2, 983047, 196608, 2, 983048, 262144, 2, 983049, 327680, 2, 983050, 393216, 2, 983051, 458752, 2, 983052, 524288, 2, 983053, 196608, 2, 983054, 262144, 2, 983055, 327680, 2, 983056, 393216, 2, 983057, 458752, 2, 983058, 524288, 2, 983059, 196608, 2, 983060, 262144, 2, 983061, 327680, 2, 983062, 393216, 2, 983063, 458752, 2, 983064, 524288, 2, 983065, 196608, 2, 983066, 262144, 2, 983067, 327680, 2, 983068, 393216, 2, 983069, 458752, 2, 983070, 524288, 2, 983071, 589824, 2, 983040, 131072, 2, 1048576, 131072, 3, 1048577, 196608, 3, 1048578, 262144, 3, 1048579, 327680, 3, 1048580, 393216, 3, 1048581, 458752, 3, 1048582, 327680, 4, 1048583, 262144, 3, 1048584, 196608, 3, 1048585, 262144, 3, 1048586, 327680, 3, 1048587, 393216, 3, 1048588, 458752, 3, 1048589, 327680, 4, 1048590, 262144, 3, 1048591, 196608, 3, 1048592, 262144, 3, 1048593, 327680, 3, 1048594, 393216, 3, 1048595, 458752, 3, 1048596, 327680, 4, 1048597, 262144, 3, 1048598, 196608, 3, 1048599, 262144, 3, 1048600, 327680, 3, 1048601, 393216, 3, 1048602, 458752, 3, 1048603, 524288, 3, 1048604, 393216, 3, 1048605, 458752, 3, 1048606, 524288, 3, 1048607, 589824, 3, 1114112, 131072, 4, 1114113, 196608, 4, 1114114, 262144, 4, 1114115, 327680, 4, 1114116, 393216, 4, 1114117, 458752, 4, 1114118, 327680, 4, 1114119, 196608, 4, 1114120, 262144, 4, 1114121, 327680, 4, 1114122, 393216, 4, 1114123, 458752, 4, 1114124, 327680, 4, 1114125, 196608, 4, 1114126, 262144, 4, 1114127, 327680, 4, 1114128, 393216, 4, 1114129, 458752, 4, 1114130, 327680, 4, 1114131, 196608, 4, 1114132, 262144, 4, 1114133, 327680, 4, 1114134, 393216, 4, 1114135, 458752, 4, 1114136, 327680, 4, 1114137, 196608, 4, 1114138, 262144, 4, 1114139, 327680, 4, 1114140, 393216, 4, 1114141, 458752, 4, 1114142, 524288, 4, 1114143, 589824, 4)
+
+[node name="WelcomeMessage" type="Sprite2D" parent="."]
+position = Vector2(1114, 547)
+texture = ExtResource("6_xngwc")

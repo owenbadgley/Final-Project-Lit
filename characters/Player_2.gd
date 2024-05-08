@@ -6,7 +6,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
 @export var speed_limit = 500
 @export var horizontal_air_coeffecient = 0.8
 @export var friction = 0.2
-@export var blink_distance = 2000
+@export var blink_distance = 2500
 @export var speed_limit_vert = speed_limit
 var blinking = -100
 

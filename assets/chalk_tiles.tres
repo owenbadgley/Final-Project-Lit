@@ -692,4 +692,5 @@ physics_layer_0/collision_layer = 7
 physics_layer_0/collision_mask = 7
 physics_layer_1/collision_layer = 3
 physics_layer_1/collision_mask = 7
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4fs7q")
