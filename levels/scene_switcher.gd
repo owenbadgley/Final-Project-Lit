@@ -17,7 +17,9 @@ func handle_level_changed(current_level_name: String):
 		"level_1":
 			next_level_name = "level_2"
 		"level_2":
-			next_level_name = "main"
+			next_level_name = "level_3"
+		"level_3":
+			next_level_name = "level_4"
 			
 	var temp = load("res://levels/"+next_level_name+".tscn") # res://levels/level_1.tscn
 	next_level = temp.instantiate() # this is required in order to see the scene
