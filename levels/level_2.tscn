@@ -47,3 +47,8 @@ scale = Vector2(0.485, 0.485)
 
 [node name="OneWayPlatform6" parent="." instance=ExtResource("6_cm1ye")]
 position = Vector2(-232, 261)
+
+[node name="OneWayPlatform7" parent="." instance=ExtResource("6_cm1ye")]
+position = Vector2(-112, 347)
+rotation = 1.55509
+scale = Vector2(0.425, 0.425)
