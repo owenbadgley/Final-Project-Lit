@@ -2,7 +2,7 @@ extends Node
 
 @onready var current_level = $Main
 # Called when the node enters the scene tree for the first time.
-
+#https://www.youtube.com/watch?v=XHbrKdsZrxY&t=1129s <- the video that helped me implement this
 func _ready():
 	current_level.level_changed.connect(handle_level_changed) # Replace with function body.
 	current_level.restart_level.connect(handle_restart_level)

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b54caf5nrwikm"]
-
-[ext_resource type="PackedScene" uid="uid://cbuir35e8b3j6" path="res://practice_scene.tscn" id="2_x0uxh"]
-
-[node name="Main" type="Node"]
-
-[node name="practice_scene" parent="." instance=ExtResource("2_x0uxh")]
